@@ -22,11 +22,11 @@
             justify-content: space-around;
             align-items: center;
             height: 5vh;
-            background-color: #eee;
+            background-color: #0F2A60; /* 修改按鈕底色 */
         }
 
         .button {
-            background-color: #4CAF50;
+            background-color: #0F2A60; /* 修改按鈕底色 */
             border: none;
             color: white;
             padding: 10px 20px;
@@ -52,6 +52,10 @@
 </head>
 <body>
 
+<div id="header">
+    <h1>Dragon Geosciences - Voyage - Advanced</h1> <!-- 添加標題 -->
+</div>
+
 <div id="buttons-container">
     <button class="button" onclick="loadIframe('https://reurl.cc/YV7k7O')">2023</button>
     <button class="button" onclick="loadIframe('https://reurl.cc/4j5b1v')">2022</button>
@@ -68,7 +72,7 @@
 </div>
 
 <div id="iframe-container">
-    <iframe id="myIframe" src="" frameborder="0"></iframe>
+    <iframe id="myIframe" src="https://reurl.cc/YV7k7O" frameborder="0"></iframe> <!-- 預設顯示2023年的內容 -->
 </div>
 
 <script>
