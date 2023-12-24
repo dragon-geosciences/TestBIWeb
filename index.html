@@ -9,8 +9,8 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            position: relative; /* 設定相對位置 */
-            background-color: #0f2a60; /* 修改背景顏色 */
+            position: relative;
+            background-color: #0f2a60;
         }
 
         #header {
@@ -25,11 +25,11 @@
             justify-content: space-around;
             align-items: center;
             height: 5vh;
-            background-color: #0F2A60; /* 修改按鈕底色 */
+            background-color: #0F2A60;
         }
 
         .button {
-            background-color: #0F2A60; /* 修改按鈕底色 */
+            background-color: #0F2A60;
             border: none;
             color: white;
             padding: 10px 20px;
@@ -43,29 +43,29 @@
         }
 
         #iframe-container {
-            height: 95vh; /* 調整高度為 95vh */
-            position: relative; /* 設定相對位置 */
-            overflow: hidden; /* 隱藏超出範圍的內容 */
-            border: 10px solid #0f2a60; /* 加入邊框樣式，顏色為 #0f2a60 */
+            height: 95vh;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid #0f2a60;
         }
 
         #myIframe {
             width: 100%;
             height: 100%;
             border: none;
-            z-index: 1; /* 設定 z-index，使 iframe 在上層 */
+            z-index: 1;
         }
 
         #dragonOverlay {
             background-color: #0f2a60;
             color: white;
             text-align: center;
-            position: absolute; /* 設定絕對位置 */
+            position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             padding: 10px;
-            z-index: 2; /* 設定 z-index，使 overlay 在 iframe 上層 */
+            z-index: 2;
         }
     </style>
 </head>
@@ -73,18 +73,12 @@
 <script>
 // Function to prompt for password
 function promptForPassword() {
-    // Use the prompt function to get the password from the user
     var password = prompt("Enter the password:");
-
-    // Replace 'your_password' with the actual password you want to set
     var correctPassword = "voyage";
 
-    // Check if the entered password is correct
     if (password === correctPassword) {
-        // If the password is correct, show the content
         showContent();
     } else {
-        // If the password is incorrect, display an alert and reload the page
         alert("Incorrect password. Please try again.");
         location.reload();
     }
@@ -92,34 +86,38 @@ function promptForPassword() {
 
 // Function to show the content
 function showContent() {
-    // Set the display property of the content to 'block'
     document.getElementById('content').style.display = 'block';
 }
 
-// Call the promptForPassword function when the page loads
+// Function to load iframe with a given URL
+function loadIframe(url) {
+    document.getElementById('myIframe').src = url;
+}
+
 window.onload = promptForPassword;
 </script>
 
 <!-- Content that will be hidden until the correct password is entered -->
 <div id="content" style="display: none;">
-<div id="buttons-container">
-    <button class="button" onclick="loadIframe('https://reurl.cc/YV7k7O')">2023</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/4j5b1v')">2022</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/v03Kde')">2021</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/QenVjq')">2020</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/67VbEy')">2019</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/OG7RkR')">2018</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/lgkaR6')">2017</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/j3MmqL')">2016</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/VNpm3N')">2015</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/j3Mm5L')">2014</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/804bnb')">2013</button>
-    <button class="button" onclick="loadIframe('https://reurl.cc/qrzKzR')">2012</button>
-</div>
+    <div id="buttons-container">
+        <button class="button" onclick="loadIframe('https://reurl.cc/YV7k7O')">2023</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/4j5b1v')">2022</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/v03Kde')">2021</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/QenVjq')">2020</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/67VbEy')">2019</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/OG7RkR')">2018</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/lgkaR6')">2017</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/j3MmqL')">2016</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/VNpm3N')">2015</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/j3Mm5L')">2014</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/804bnb')">2013</button>
+        <button class="button" onclick="loadIframe('https://reurl.cc/qrzKzR')">2012</button>
+    </div>
 
-<div id="iframe-container">
-    <iframe id="myIframe" src="https://reurl.cc/YV7k7O" frameborder="0"></iframe> <!-- 預設顯示2023年的內容 -->
-    <div id="dragonOverlay">Dragon Geosciences</div>
+    <div id="iframe-container">
+        <iframe id="myIframe" src="https://reurl.cc/YV7k7O" frameborder="0"></iframe>
+        <div id="dragonOverlay">Dragon Geosciences</div>
+    </div>
 </div>
 
 </body>
