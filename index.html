@@ -69,7 +69,7 @@
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body>
 
 <div id="buttons-container">
     <button class="button" onclick="loadIframe('https://reurl.cc/YV7k7O')">2023</button>
@@ -95,6 +95,11 @@
     function loadIframe(url) {
         document.getElementById('myIframe').src = url;
     }
+
+    // 禁止右鍵點擊
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+    });
 </script>
 
 </body>
