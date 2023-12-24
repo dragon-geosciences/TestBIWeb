@@ -70,7 +70,38 @@
     </style>
 </head>
 <body>
+<script>
+// Function to prompt for password
+function promptForPassword() {
+    // Use the prompt function to get the password from the user
+    var password = prompt("Enter the password:");
 
+    // Replace 'your_password' with the actual password you want to set
+    var correctPassword = "voyage";
+
+    // Check if the entered password is correct
+    if (password === correctPassword) {
+        // If the password is correct, show the content
+        showContent();
+    } else {
+        // If the password is incorrect, display an alert and reload the page
+        alert("Incorrect password. Please try again.");
+        location.reload();
+    }
+}
+
+// Function to show the content
+function showContent() {
+    // Set the display property of the content to 'block'
+    document.getElementById('content').style.display = 'block';
+}
+
+// Call the promptForPassword function when the page loads
+window.onload = promptForPassword;
+</script>
+
+<!-- Content that will be hidden until the correct password is entered -->
+<div id="content" style="display: none;">
 <div id="buttons-container">
     <button class="button" onclick="loadIframe('https://reurl.cc/YV7k7O')">2023</button>
     <button class="button" onclick="loadIframe('https://reurl.cc/4j5b1v')">2022</button>
@@ -90,17 +121,6 @@
     <iframe id="myIframe" src="https://reurl.cc/YV7k7O" frameborder="0"></iframe> <!-- 預設顯示2023年的內容 -->
     <div id="dragonOverlay">Dragon Geosciences</div>
 </div>
-
-<script>
-    function loadIframe(url) {
-        document.getElementById('myIframe').src = url;
-    }
-
-    // 禁止右鍵點擊
-    document.addEventListener("contextmenu", function(e) {
-        e.preventDefault();
-    });
-</script>
 
 </body>
 </html>
