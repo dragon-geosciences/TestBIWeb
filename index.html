@@ -68,13 +68,8 @@
             z-index: 2; /* 設定 z-index，使 overlay 在 iframe 上層 */
         }
     </style>
-    <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-    </script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
 <div id="buttons-container">
     <button class="button" onclick="loadIframe('https://reurl.cc/YV7k7O')">2023</button>
