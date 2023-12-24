@@ -9,12 +9,15 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            position: relative; /* 設定相對位置 */
+            background-color: #0f2a60; /* 修改背景顏色 */
         }
 
         #header {
-            background-color: #333;
+            background-color: #0f2a60;
             padding: 10px;
             text-align: center;
+            color: white;
         }
 
         #buttons-container {
@@ -40,13 +43,29 @@
         }
 
         #iframe-container {
-            height: 100vh;
+            height: 95vh; /* 調整高度為 95vh */
+            position: relative; /* 設定相對位置 */
+            overflow: hidden; /* 隱藏超出範圍的內容 */
+            border: 10px solid #0f2a60; /* 加入邊框樣式，顏色為 #0f2a60 */
         }
 
         #myIframe {
             width: 100%;
             height: 100%;
             border: none;
+            z-index: 1; /* 設定 z-index，使 iframe 在上層 */
+        }
+
+        #dragonOverlay {
+            background-color: #0f2a60;
+            color: white;
+            text-align: center;
+            position: absolute; /* 設定絕對位置 */
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            z-index: 2; /* 設定 z-index，使 overlay 在 iframe 上層 */
         }
     </style>
 </head>
@@ -69,6 +88,7 @@
 
 <div id="iframe-container">
     <iframe id="myIframe" src="https://reurl.cc/YV7k7O" frameborder="0"></iframe> <!-- 預設顯示2023年的內容 -->
+    <div id="dragonOverlay">Dragon Geosciences</div>
 </div>
 
 <script>
